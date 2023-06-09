@@ -1,6 +1,12 @@
-<h1>Enter the sentences</h1>
+{%load static%}
 
-<form method="" action="counter">
+<link rel="stylesheet" href="{%static 'style.css' %}" />
+
+<h1>Enter your sentences here</h1>
+
+<form method="Post" action="counter">
+  {%csrf_token%}
   <textarea name="texts" rows="25" cols="50"></textarea>
-  <input type="Submit" />
+  <br />
+  <input type="submit" value="Count" />
 </form>
