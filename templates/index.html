@@ -10,5 +10,8 @@
   <br />
   <input type="submit" value="Count" />
 </form>
-
-<p><a href="second_index">Click here</a></p>
+{%for features in features %}
+<p><a href="second_index">{{features.name}}</a></p>
+<p>{{features.id}}</p>
+<p>{{features.details}}</p>
+{% endfor %}
