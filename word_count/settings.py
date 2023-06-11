@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'word_count.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'wordcount',
+        'USER': 'postgres',
+        'PASSWORD': '4343eb907c',
+        'HOST': 'localhost',
+
     }
 }
 

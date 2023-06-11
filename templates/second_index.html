@@ -39,11 +39,21 @@ Licence URI: http://www.os-templates.com/template-terms
     <div class="wrapper col2">
       <div id="header">
         <div id="logo">
+          {%if user.is_authenticated %}
+          <h1>Welcome</h1>
+          <p>{{user.username}}</p>
+          <p>{%else%}</p>
+
           <h1><a href="second_index.html">PhotoBusiness</a></h1>
           <p>Free Website Template</p>
+          {% endif %}
         </div>
         <ul id="topnav">
-          <li class="last"><a href="#">Link Text</a></li>
+          {%if user.is_authenticated %}
+          <li class="last"><a href='/logout'>Logout></li>
+          {%else%}
+          <li class="last"><a href="/login">Sign Up or Login</a></li>
+          {%endif%}
           <li>
             <a href="#">DropDown</a>
             <ul>
@@ -102,7 +112,7 @@ Licence URI: http://www.os-templates.com/template-terms
           </li>
           <li>
             <a class="swap" href="#"
-              ><img src="{%static  L'images/gallery/4_s.gif' %}" alt="" /><span
+              ><img src="{%static  'images/gallery/4_s.gif' %}" alt="" /><span
                 ><img
                   src="{%static 'images/gallery/4.gif' %}"
                   width="950"
