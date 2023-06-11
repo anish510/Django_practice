@@ -10,8 +10,10 @@
   <br />
   <input type="submit" value="Count" />
 </form>
+
 {%for features in features %}
 <p><a href="second_index">{{features.name}}</a></p>
-<p>{{features.id}}</p>
 <p>{{features.details}}</p>
-{% endfor %}
+{%if features.name == 'car'%}
+<p>this feature is quick</p>
+{%endif%} {% endfor %}
